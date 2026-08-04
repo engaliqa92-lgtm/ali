@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية - طالب أمن سيبراني</title>
+    <!-- خط تجوال وأيقونات FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --tag-bg: #eff6ff;
+            --tag-text: #1d4ed8;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* الوضع الليلي - متناسب مع طابع الهكر والأمن السيبراني */
+        [data-theme="dark"] {
+            --primary-color: #38bdf8;
+            --accent-color: #00f2fe;
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --text-color: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+            --tag-bg: #1e293b;
+            --tag-text: #38bdf8;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+
+        /* أزرار التحكم */
+        .controls {
+            max-width: 950px;
+            margin: 0 auto 15px auto;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* العمود الجانبي */
+        .sidebar {
+            background-color: rgba(0, 0, 0, 0.02);
+            border-left: 1px solid var(--border-color);
+            padding: 30px 20px;
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: block;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            margin: 20px 0 10px 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .contact-info p {
+            font-size: 0.88rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            word-break: break-word;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 6px 12px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        /* المحتوى الرئيسي */
+        .main-content {
+            padding: 40px;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .header h2 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-right: 15px;
+            border-right: 2px solid var(--border-color);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.05rem;
+            color: var(--text-color);
+        }
+
+        .timeline-item .sub-title {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .timeline-item .date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p, .timeline-item ul {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .timeline-item ul {
+            padding-right: 18px;
+            margin-top: 5px;
+        }
+
+        /* تجاوب الشاشات الصغرى */
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-left: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .main-content {
+                padding: 20px;
+            }
+        }
+
+        /* إعدادات الطباعة */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .controls {
+                display: none;
+            }
+            .cv-container {
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- أزرار التحكم -->
+    <div class="controls">
+        <button class="btn" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i> المظهر
+        </button>
+        <button class="btn" onclick="window.print()">
+            <i class="fas fa-print"></i> طباعة / حفظ PDF
+        </button>
+    </div>
+
+    <!-- حاوية السيرة الذاتية -->
+    <div class="cv-container">
+        
+        <!-- الشريط الجانبي -->
+        <aside class="sidebar">
+            <img src="ali.jpg" alt="الصورة الشخصية" class="profile-img">
+            
+            <h3 class="sidebar-title">معلومات التواصل</h3>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+                <p><i class="fas fa-phone"></i> +967 770 000 000</p>
+                <p><i class="fas fa-map-marker-alt"></i> صنعاء، اليمن</p>
+                <p><i class="fab fa-linkedin"></i> linkedin.com/in/username</p>
+                <p><i class="fab fa-github"></i> github.com/username</p>
+                <p><i class="fas fa-shield-alt"></i> TryHackMe: @username</p>
+            </div>
+
+            <h3 class="sidebar-title">المهارات التقنية (Networks)</h3>
+            <ul class="skills-list">
+                <li>TCP/IP & OSI Model</li>
+                <li>Routing & Switching (CCNA)</li>
+                <li>Wireshark / Packet Analysis</li>
+                <li>Subnetting & VLANs</li>
+                <li>Firewalls & VPNs</li>
+            </ul>
+
+            <h3 class="sidebar-title">أدوات الأمن والأنظمة</h3>
+            <ul class="skills-list">
+                <li>Linux (Kali / Ubuntu)</li>
+                <li>Nmap / Metasploit</li>
+                <li>Bash & Python Scripting</li>
+                <li>Active Directory Fundamentals</li>
+            </ul>
+
+            <h3 class="sidebar-title">اللغات</h3>
+            <ul class="skills-list">
+                <li>العربية (اللغة الأم)</li>
+                <li>الإنكليزية (جيد جداً - التقنية)</li>
+            </ul>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <!-- الهيدر -->
+            <header class="header">
+                <h1علي قائد احمد العمري</h1>
+                <h2>طالب أمن سيبراني (Cybersecurity Student) | متأصل في الشبكات</h2>
+            </header>
+
+            <!-- نبذة تعريفية -->
+            <section class="section">
+                <h3 class="section-title"><i class="fas fa-user-shield"></i> نبذة تعريفية</h3>
+                <p>طالب أمن سيبراني في المستوى الثالث، أمتلك فَهماً عميقاً وقوياً لبنية واستجابة الشبكات وبروتوكولات التواصل (Networking Specialist). أسعى لتطبيق المهارات الأكاديمية والعملية في مجالات اختبار الاختراق والترصد الجنائي الرقمي وحماية الشبكات، ولدّي شغف مستمر للتعلم وحل التحديات الأمنية المعقدة.</p>
+            </section>
+
+            <!-- التعليم -->
+            <section class="section">
+                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> التعليم الأكاديمي</h3>
+                
+                <div class="timeline-item">
+                    <h3>بكالوريوس أمن سيبراني (Cybersecurity)</h3>
+                    <div class="sub-title">اسم الجامعة - العلوم و التكنولوجيا </div>
+                    <div class="date">2026 - متوقع التخرج 2027 (حاليًا المستوى الثالث)</div>
+                    <p>المعدل الأكاديمي: ممتاز</p>
+                    <p><strong>أبرز المواد المكتملة:</strong> شبكات الحاسوب، أمن الشبكات، أنظمة التشغيل (Linux/Windows)، التشفير، البرمجة بلغة Python و C++.</p>
+                </div>
+            </section>
+
+            <!-- المشاريع والبيئة التطبيقية -->
+            <section class="section">
+                <h3 class="section-title"><i class="fas fa-project-diagram"></i> المشاريع والتطبيق العملي</h3>
+                
+                <div class="timeline-item">
+                    <h3>بناء معمل شبكات وأمن وهمي (Home Lab Setup)</h3>
+                    <div class="sub-title">مشروع شخصي</div>
+                    <div class="date">2026</div>
+                    <ul>
+                        <li>إعداد بيئة اختراق واختبار داخلية باستخدام VMware و GNS3.</li>
+                        <li>ربط نظام Kali Linux مع أجهزة هدف (Metasploitable & Windows Server).</li>
+                        <li>تطبيق ومراقبة حركة البيانات باستخدام Wireshark لتحليل الثغرات وسلوكيات الهجمات.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>حل تحديات المنصات العالمية (CTF & Labs)</h3>
+                    <div class="sub-title">TryHackMe & Hack The Box</div>
+                    <div class="date">مستمر</div>
+                    <ul>
+                        <li>إتمام مسار Network Defense و Pre-Security على منصة TryHackMe.</li>
+                        <li>التدرب على فحص الشبكات وتقييم الهشاشة باستخدام Nmap و Burp Suite.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- الدورات والشهادات -->
+            <section class="section">
+                <h3 class="section-title"><i class="fas fa-certificate"></i> الدورات والاستعداد للشهادات</h3>
+                
+                <div class="timeline-item">
+                    <h3>Cisco CCNA (Routing and Switching)</h3>
+                    <div class="sub-title">مستعد للفيصل في الاختبار / مكتمل المنهج</div>
+                    <p>تغطية كاملة لـ IP Addressing، Routing Protocols، Ethernet Switching، وضبط الموجهات والسويتشات.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>CompTIA Security+ / eJPT</h3>
+                    <div class="sub-title">قيد التحضير حالياً</div>
+                    <p>قيد دراسة وتطبيق مفاهيم إدارة المخاطر، التشفير، واختبار الاختراق الأساسي.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- السكربت الجافاسكربت -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('cv_theme', targetTheme);
+        }
+
+        const savedTheme = localStorage.getItem('cv_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html>
